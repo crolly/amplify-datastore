@@ -78746,10 +78746,12 @@ var createModelClass = function createModelClass(modelDefinition) {
       var instance = Object(immer__WEBPACK_IMPORTED_MODULE_1__["produce"])(this, function (draft) {
         initializeInstance(init, modelDefinition, draft);
         var modelInstanceMetadata = instancesMetadata.has(init) ? init : {};
-        var _id = modelInstanceMetadata.id,
-            _version = modelInstanceMetadata._version,
+        var _version = modelInstanceMetadata._version,
             _lastChangedAt = modelInstanceMetadata._lastChangedAt,
             _deleted = modelInstanceMetadata._deleted;
+
+        var _id = init.id || modelInstanceMetadata.id;
+
         var id = // instancesIds is set by modelInstanceCreator, it is accessible only internally
         _id !== null && _id !== undefined ? _id : modelDefinition.syncable ? Object(uuid__WEBPACK_IMPORTED_MODULE_2__["v4"])() : ulid();
         draft.id = id;

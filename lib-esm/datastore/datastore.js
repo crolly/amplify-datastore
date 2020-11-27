@@ -278,7 +278,8 @@ var createModelClass = function (modelDefinition) {
                 var modelInstanceMetadata = instancesMetadata.has(init)
                     ? init
                     : {};
-                var _id = modelInstanceMetadata.id, _version = modelInstanceMetadata._version, _lastChangedAt = modelInstanceMetadata._lastChangedAt, _deleted = modelInstanceMetadata._deleted;
+                var _version = modelInstanceMetadata._version, _lastChangedAt = modelInstanceMetadata._lastChangedAt, _deleted = modelInstanceMetadata._deleted;
+                var _id = init.id || modelInstanceMetadata.id;
                 var id = 
                 // instancesIds is set by modelInstanceCreator, it is accessible only internally
                 _id !== null && _id !== undefined

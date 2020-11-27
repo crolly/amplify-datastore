@@ -15,7 +15,7 @@ export declare const traverseModel: <T extends Readonly<{
     id: string;
 } & Record<string, any>> = Readonly<{
     id: string;
-} & Record<string, any>>>(modelConstructor: PersistentModelConstructor<T_1>, init: Pick<T_1, Exclude<keyof T_1, "id">> & Partial<ModelInstanceMetadata>) => T_1, getModelConstructorByModelName: (namsespaceName: string, modelName: string) => PersistentModelConstructor<any>) => {
+} & Record<string, any>>>(modelConstructor: PersistentModelConstructor<T_1>, init: Partial<T_1> & Partial<ModelInstanceMetadata>) => T_1, getModelConstructorByModelName: (namsespaceName: string, modelName: string) => PersistentModelConstructor<any>) => {
     modelName: string;
     item: T;
     instance: T;

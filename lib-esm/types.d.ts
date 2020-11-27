@@ -116,7 +116,7 @@ export declare type TypeConstructorMap = Record<string, PersistentModelConstruct
 export declare type PersistentModel = Readonly<{
     id: string;
 } & Record<string, any>>;
-export declare type ModelInit<T> = Omit<T, 'id'>;
+export declare type ModelInit<T> = Partial<T>;
 declare type DeepWritable<T> = {
     -readonly [P in keyof T]: T[P] extends TypeName<T[P]> ? T[P] : DeepWritable<T[P]>;
 };
